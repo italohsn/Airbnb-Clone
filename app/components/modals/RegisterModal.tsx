@@ -16,6 +16,8 @@ import Heading from '../Heading'
 import Input from '../inputs/input'
 import { toast } from 'react-hot-toast'
 import Button from '../Button'
+import { signIn } from 'next-auth/react'
+import { sign } from 'crypto'
 
 
 const RegisterModal = () => {
@@ -92,13 +94,13 @@ const RegisterModal = () => {
         outline
         label="Continue com o Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn('google')}
       />
       <Button 
         outline
         label="Continue com o Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div 
         className="
