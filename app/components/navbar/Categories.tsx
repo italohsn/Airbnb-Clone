@@ -30,7 +30,7 @@ export const categories = [
   {
     label: 'No interior',
     icon: TbMountain,
-    description: 'Uma propriedade está localizada no interior!'
+    description: 'Propriedade localizada no interior!'
   },
   {
     label: 'Piscinas incríveis',
@@ -40,7 +40,7 @@ export const categories = [
   {
     label: 'Ilhas',
     icon: GiIsland,
-    description: 'Uma propriedade está localizada em uma ilha!'
+    description: 'Propriedade  localizada em uma ilha!'
   },
   {
     label: 'Lago',
