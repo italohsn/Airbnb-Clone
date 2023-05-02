@@ -1,4 +1,4 @@
-import { Listing, User } from "@prisma/client";
+import { Listing, Reservation, User } from "@prisma/client";
 
 export type SafeListing = Omit<
   Listing,
@@ -7,6 +7,15 @@ export type SafeListing = Omit<
   createdAt: string;
 }
 
+export type SafeReservation = Omit<
+  Reservation,
+  "createdAt" | "starDate" | "endDate" | "listing"
+> & {
+  createdAt: string;
+  startDate: string;
+  endDate: string;
+  listing: SafeListing
+}
 
 export type SafeUser = Omit<
   User,
