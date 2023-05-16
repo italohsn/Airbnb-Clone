@@ -3,7 +3,6 @@ import ClientOnly from "../components/ClientOnly";
 import PropertiesClient from "./PropertiesClient"
 
 import getCurrentUser from "../actions/getCurrentUser";
-import TripsClient from "./PropertiesClient";
 import getListings from "../actions/getListings";
 
 
