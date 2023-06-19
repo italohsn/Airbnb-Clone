@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import {IoMdClose} from 'react-icons/io'
+
 import Button from "../Button";
 
 interface ModalProps {

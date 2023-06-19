@@ -2,8 +2,10 @@
 
 import axios from 'axios'
 import { AiFillGithub } from 'react-icons/ai'
+import { signIn } from 'next-auth/react'
 import {FcGoogle} from "react-icons/fc"
 import { useCallback, useState } from 'react'
+import { toast } from 'react-hot-toast'
 import  { 
   FieldValues,
   SubmitHandler,
@@ -16,9 +18,7 @@ import useLoginModal from '@/app/hooks/useLoginModal'
 import Modal from './Modal'
 import Heading from '../Heading'
 import Input from '../inputs/input'
-import { toast } from 'react-hot-toast'
 import Button from '../Button'
-import { signIn } from 'next-auth/react'
 
 
 const RegisterModal = () => {

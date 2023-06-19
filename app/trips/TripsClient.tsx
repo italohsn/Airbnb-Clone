@@ -12,8 +12,8 @@ import { SafeReservation, SafeUser } from "../types";
 import { toast } from "react-hot-toast";
 
 interface TripsClientProps {
-  reservations: SafeReservation[];
-  currentUser?: SafeUser | null
+  reservations: SafeReservation[],
+  currentUser?: SafeUser | null,
 }
 
 const TripsClient: React.FC<TripsClientProps> = ({

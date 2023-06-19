@@ -1,11 +1,11 @@
 'use client'
 
-import { formatISO } from "date-fns";
 import qs from "query-string";
+import dynamic from "next/dynamic"
+import { formatISO } from "date-fns";
 import { useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useMemo, useState } from "react"
 import { Range } from "react-date-range"
-import dynamic from "next/dynamic"
 
 import Modal from "./Modal"
 import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect"

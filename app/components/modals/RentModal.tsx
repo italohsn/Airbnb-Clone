@@ -1,21 +1,21 @@
 'use client'
 
-import { useMemo, useState } from "react"
-import useRentModal from "@/app/hooks/useRentModal"
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
-
-import Modal from "./Modal"
-import Heading from "../Heading"
-import { categories } from "../navbar/Categories"
-import CategoryInput from "../inputs/CategoryInput"
-import CountrySelect from "../inputs/CountrySelect"
-import dynamic from "next/dynamic"
-import Counter from "../inputs/Counter"
-import ImageUpload from "../inputs/ImageUpload"
-import Input from "../inputs/input"
 import axios from "axios"
 import { useRouter } from "next/navigation"
 import { toast } from "react-hot-toast"
+import { useMemo, useState } from "react"
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
+import dynamic from "next/dynamic"
+import { categories } from "../navbar/Categories"
+
+import useRentModal from "@/app/hooks/useRentModal"
+import Modal from "./Modal"
+import Heading from "../Heading"
+import CategoryInput from "../inputs/CategoryInput"
+import CountrySelect from "../inputs/CountrySelect"
+import Counter from "../inputs/Counter"
+import ImageUpload from "../inputs/ImageUpload"
+import Input from "../inputs/input"
 
 
 enum STEPS {
@@ -24,7 +24,7 @@ enum STEPS {
   INFO = 2,
   IMAGES = 3,
   DESCRIPTION = 4,
-  PRICE = 5
+  PRICE = 5,
 }
 
 const RentModal = () => {
