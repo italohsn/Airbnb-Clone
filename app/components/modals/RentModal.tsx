@@ -24,7 +24,7 @@ enum STEPS {
   INFO = 2,
   IMAGES = 3,
   DESCRIPTION = 4,
-  PRICE = 5,
+  PRICE = 5
 }
 
 const RentModal = () => {
