@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import getCurrentUser from "@/app/actions/getCurrentUser";
-import { Prisma } from "@prisma/client";
+import prisma from "@/app/libs/prismadb";
 
 interface IParams {
   reservationId?: string;
@@ -31,7 +31,7 @@ export async function DELETE(
         {listing: {userId: currentUser.id}}
       ]
     }
-  })
+  });
   
-  return NextResponse.json(reservation)
+  return NextResponse.json(reservation);
 }

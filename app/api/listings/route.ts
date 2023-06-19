@@ -26,8 +26,8 @@ export async function POST(
   } = body;
 
   Object.keys(body).forEach((value: any) => {
-    (!body[value])
-    NextResponse.error()
+    if (!body[value])
+      NextResponse.error()
   })
 
   const listing = await prisma.listing.create({
