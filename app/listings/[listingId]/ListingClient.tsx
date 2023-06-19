@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { eachDayOfInterval, differenceInCalendarDays, } from "date-fns";
+import { eachDayOfInterval, differenceInDays, } from "date-fns";
 
 import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { categories } from "@/app/components/navbar/Categories";
@@ -17,7 +17,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import ListingReservation from "@/app/components/listings/ListingReservation";
 
 const initialDateRange = {
-  startDate: new Date(),
+  starDate: new Date(),
   endDate: new Date(),
   key: 'selection'
 }
@@ -43,7 +43,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
     reservations.forEach((reservation) => {
       const range = eachDayOfInterval({
-        start: new Date(reservation.startDate),
+        start: new Date(reservation.starDate),
         end: new Date(reservation.endDate)
       });
 
@@ -53,6 +53,11 @@ const ListingClient: React.FC<ListingClientProps> = ({
     return dates;
   }, [reservations]);
 
+  const category = useMemo(() => {
+    return categories.find((item) => 
+    item.label === listing.category);
+  }, [listing.category])
+  
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange)
@@ -93,7 +98,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
-      const dayCount = differenceInCalendarDays(
+      const dayCount = differenceInDays(
         dateRange.endDate,
         dateRange.startDate
       );
@@ -106,10 +111,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
     }
   },[dateRange, listing.price])
 
-  const category = useMemo(() => {
-    return categories.find((item) => 
-    item.label === listing.category);
-  }, [listing.category])
   return (
     <Container>
       <div className="max-w-screen-lg mx-auto">

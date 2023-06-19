@@ -12,7 +12,7 @@ export default async function getReservations (
   try{
     const { listingId, userId, authorId} = params;
 
-    const query: any = {}
+    const query: any = {};
 
     if (listingId) {
       query.listingId = listingId;
@@ -44,11 +44,10 @@ export default async function getReservations (
         endDate: reservation.endDate.toISOString(),
         listing: {
           ...reservation.listing,
-          createdAt: reservation.listing.createdAt.toISOString()
-        }
-      })
-    );
-
+          createdAt: reservation.listing.createdAt.toISOString(),
+        },
+      }));
+      
     return safeReserations;
   } catch (error: any) {
     throw new Error(error)
